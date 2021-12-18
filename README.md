@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/damla/starducks-server/tree/main.svg?style=svg)](https://circleci.com/gh/damla/starducks-server/tree/main)
+[![CircleCI](https://circleci.com/gh/damla/starducks-server/tree/main.svg?style=svg&circle-token=359ede319a88a8b675f77fa361b1cf2b0fa89493)](https://circleci.com/gh/damla/starducks-server/tree/main)
 
 # ☕️ Starducks Server
 
