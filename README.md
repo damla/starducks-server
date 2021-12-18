@@ -1,8 +1,10 @@
+[![CircleCI](https://circleci.com/gh/damla/starducks-server/tree/main.svg?style=svg)](https://circleci.com/gh/damla/starducks-server/tree/main)
+
 # ☕️ Starducks Server
 
 ## Description
 
-- This repository is created with Express JS, to develop a REST API for CRUD processes of coffee data given by company. Because of the given YAML file, Swagger UI preferred for documentation.
+- This repository is created with Express JS, to develop a REST API for CRUD processes of coffee data given by company. Because of the given YAML file, Swagger UI preferred for documentation. Deployment process done on Heroku and CI/CD pipelines managed by using CircleCI.
 
 ## Dependencies
 
