@@ -9,5 +9,6 @@ describe('/GET/coffee', () => {
   it('this is a mock test', async () => {
     let res = await chai.request(app).get(`/coffee`)
     chai.expect(res.status).to.equal(200)
+    chai.expect(res.body).to.equal('test coffee')
   })
 })
