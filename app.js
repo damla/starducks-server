@@ -57,3 +57,5 @@ app.listen(PORT, () =>
     `✅ The server is running on port ${PORT}\n http://localhost:4000`
   )
 )
+
+export default app
