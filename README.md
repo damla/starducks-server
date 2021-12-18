@@ -12,4 +12,4 @@
 - Nodemon: Used to restart server automatically
 - Swagger UI Express: Used to serve Swagger
 - Swagger JSDoc: Used to read annotated source code and generate OpenAPI specs.
-- Nanoid: Used to generate random ids
+- UUID: Used to generate random UUIDs

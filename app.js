@@ -1,17 +1,19 @@
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
-import low from 'lowdb'
 import swaggerUI from 'swagger-ui-express'
 import swaggerJsDoc from 'swagger-jsdoc'
-import coffeeRouter from './routes/coffee.js'
-import FileSync from 'lowdb/adapters/FileSync'
+import coffeeRouter from './routes/coffee.route.js'
+import { Low, JSONFile } from 'lowdb'
 
 const PORT = process.env.PORT || 4000
 
-const adapter = new FileSync('db.json')
-const db = low(adapter)
-db.defaults({ coffees: [] }).write()
+const adapter = new JSONFile('db.json')
+const db = new Low(adapter)
+
+await db.read()
+db.data = db.data || { coffees: [] }
+await db.write()
 
 const options = {
   definition: {
@@ -50,4 +52,8 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use('/coffee', coffeeRouter)
 
-app.listen(PORT, () => console.log(`✅ The server is running on port ${PORT}`))
+app.listen(PORT, () =>
+  console.log(
+    `✅ The server is running on port ${PORT}\n http://localhost:4000`
+  )
+)
