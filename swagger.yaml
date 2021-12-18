@@ -94,7 +94,7 @@ paths:
                 type: string
               example: Resource Not Found
     delete:
-      summary: Delete Coffee Enpoint
+      summary: Delete Coffee Endpoint
       description: Deletes a single coffee
       parameters: []
       operationId: ''
@@ -133,7 +133,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CofeeRequest'
+              $ref: '#/components/schemas/CoffeeRequest'
         description: updated coffee
 components:
   schemas:

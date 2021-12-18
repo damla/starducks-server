@@ -10,7 +10,7 @@
 
 - Cors: Used to enable CORS policy
 - Morgan: Used as a logger
-- Lowdb: Used as a local database
+- Simple JSONdb: Used as a local database
 - Nodemon: Used to restart server automatically
 - Swagger UI Express: Used to serve Swagger
 - Swagger JSDoc: Used to read annotated source code and generate OpenAPI specs.
