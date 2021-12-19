@@ -155,7 +155,6 @@ router.post('/', (req, res) => {
 
 /**
  * @swagger
- * /coffee:
  * /coffee/{id}:
  *   get:
  *     summary: Get Coffee Endpoint
@@ -188,10 +187,62 @@ router.get('/:id', (req, res) => {
   coffeeController.getById(req, res)
 })
 
+/**
+ * @swagger
+ * /coffee/{id}:
+ *   delete:
+ *     summary: Delete Coffee Endpoint
+ *     description: Deletes a single coffee
+ *     parameters: []
+ *     operationId: ''
+ *     responses:
+ *       '204':
+ *         description: Empty Response
+ *       '404':
+ *         description: Not Found
+ *         content:
+ *           application/json:
+ *             schema: {}
+ */
+
 // DELETE/coffee/:id
 router.delete('/:id', (req, res) => {
   coffeeController.delete(req, res)
 })
+
+/**
+ * @swagger
+ * /coffee/{id}:
+ *   put:
+ *     summary: ''
+ *     description: ''
+ *     parameters: []
+ *     operationId: ''
+ *     responses:
+ *       '200':
+ *         description: Default response
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/CoffeeResponse'
+ *       '400':
+ *         description: Invalid Input
+ *         content:
+ *           application/json:
+ *             schema: {}
+ *       '404':
+ *         description: Not Found
+ *         content:
+ *           application/json:
+ *             schema: {}
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/CoffeeRequest'
+ *       description: updated coffee
+ */
 
 // PUT/coffee/:id
 router.put('/:id', (req, res) => {
