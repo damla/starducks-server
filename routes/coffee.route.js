@@ -119,11 +119,24 @@ const router = express.Router()
  */
 
 router.get('/', (req, res) => {
-  coffeeController.getCoffee(req, res)
+  coffeeController.getAll(req, res)
 })
-// router.post('/', (req, res) => {})
 
-// // coffee/{id}
+router.get('/:id', (req, res) => {
+  coffeeController.getById(req, res)
+})
+
+// // router.post('/', (req, res) => {})
+
+// // get coffee by id
+// router.get('/:id', (req, res) => {
+//   coffeeController.getByCoffeeId(req, res)
+// })
+
+// router.post('/', (req, res) => {
+//   coffeeController.createCoffee(req, res)
+// })
+
 // router.get('/:id', (req, res) => {})
 // router.delete('/:id', (req, res) => {})
 // router.put('/:id', (req, res) => {})

@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "mocha --recursive --exit"
+    "test": "mocha  --timeout 30000 --recursive --exit"
   },
   "repository": {
     "type": "git",
@@ -24,12 +24,14 @@
   },
   "homepage": "https://github.com/damla/starducks-server#readme",
   "dependencies": {
+    "mongodb": "^3.6.3",
+    "mongoose": "^6.0.12",
+    "dotenv": "^10.0.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "lowdb": "^1.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
-    "simple-json-db": "^1.2.3",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.3.0",
     "uuid": "^8.3.2"
