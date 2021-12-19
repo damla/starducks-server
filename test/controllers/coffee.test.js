@@ -6,6 +6,9 @@ import seedData from '../db/coffees.js'
 chai.use(chaiHttp)
 
 describe('/GET/coffee-list', () => {
+  before(function () {
+    this.timeout(20000) // 20 second timeout for setup
+  })
   it('it should GET all of the coffees', async () => {
     let res = await chai.request(app).get('/coffee-list')
 
