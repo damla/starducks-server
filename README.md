@@ -1,6 +1,9 @@
 [![CircleCI](https://circleci.com/gh/damla/starducks-server/tree/main.svg?style=svg&circle-token=359ede319a88a8b675f77fa361b1cf2b0fa89493)](https://circleci.com/gh/damla/starducks-server/tree/main)
 
-# ☕️ Starducks Server
+# ☕️ Starducks Client
+
+- [🔗 Client](https://starducks-client.netlify.app)
+- [🔗 Server](https://starducks-server.herokuapp.com/api-docs)
 
 ## Description
 
@@ -15,3 +18,19 @@
 - Swagger UI Express: Used to serve Swagger
 - Swagger JSDoc: Used to read annotated source code and generate OpenAPI specs.
 - UUID: Used to generate random UUIDs
+
+## Installation
+
+```bash
+# install packages
+yarn
+
+#start application with node
+yarn start
+
+# start application with nodemon to see changes on server instantly
+yarn dev
+
+# test application
+yarn test
+```
