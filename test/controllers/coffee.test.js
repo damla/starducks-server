@@ -7,9 +7,9 @@ const db = new JSONdb('./utils/db/db.json')
 // let should = chai.should()
 chai.use(chaiHttp)
 
-describe('/GET/coffee', () => {
+describe('/GET/coffee-list', () => {
   it('it should GET all of the coffees', async () => {
-    let res = await chai.request(app).get('/coffee')
+    let res = await chai.request(app).get('/coffee-list')
 
     chai.expect(res.status).to.equal(200)
     chai.expect(res.body).to.be.a('array')
