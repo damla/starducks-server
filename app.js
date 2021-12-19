@@ -20,19 +20,17 @@ const options = {
       version: '0.0.1'
     },
     servers: [
+      // {
+      //   url: 'http://localhost:4000'
+      // },
       {
-        url: 'http://localhost:4000'
+        url: '{server}',
+        variables: {
+          server: {
+            default: 'https://starducks-server-stage.herokuapp.com/'
+          }
+        }
       }
-      // servers: [
-      //   {
-      //     url: '{server}/interview/v0',
-      //     variables: {
-      //       server: {
-      //         default: 'https://kloia-apim-gateway.cloud.gravitee.io'
-      //       }
-      //     }
-      //   }
-      // ]
     ]
   },
   apis: ['./routes/*.route.js']
@@ -52,7 +50,7 @@ app.use('/coffee-list', coffeeRouter)
 
 app.listen(PORT, () =>
   console.log(
-    `✅ The server is running on: http://localhost:4000\n📄 Swagger Documentation: http://localhost:4000/api-docs`
+    `✅ The server is running on: http://localhost:4000\n📄 Swagger Documentation: https://starducks-server-stage.herokuapp.com/api-docs`
   )
 )
 
