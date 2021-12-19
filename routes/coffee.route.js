@@ -75,15 +75,13 @@ const router = express.Router()
  *             type: string
  *           updatedTime:
  *             type: string
- *         required:
- *           - id
  *   links: {}
  *   callbacks: {}
  */
 
 /**
  * @swagger
- * /coffee:
+ * /coffee-list:
  *   get:
  *     summary: Get Coffees Endpoint
  *     description: Returns a single coffee instance
@@ -93,32 +91,31 @@ const router = express.Router()
  *         content:
  *           application/json:
  *             schema:
+ *               type: array
  *               items:
- *               type: object
- *               properties:
- *                 id:
- *                   type: string
- *                   format: uuid
- *                 title:
- *                   type: string
- *                 description:
- *                   type: string
- *                 category:
- *                   type: string
- *                 ingredients:
- *                   items:
- *                     enum:
- *                       - iced
- *                       - hot
+ *                 type: object
+ *                 properties:
+ *                   id:
  *                     type: string
- *                   type: array
- *                 createdTime:
- *                   type: string
- *                 updatedTime:
- *                   type: string
- *               required:
- *                 - id
- *     parameters: []
+ *                     format: uuid
+ *                   title:
+ *                     type: string
+ *                   description:
+ *                     type: string
+ *                   category:
+ *                     type: string
+ *                   ingredients:
+ *                     items:
+ *                       enum:
+ *                         - iced
+ *                         - hot
+ *                       type: string
+ *                     type: array
+ *                   createdTime:
+ *                     type: string
+ *                   updatedTime:
+ *                     type: string
+ *       parameters: []
  */
 
 router.get('/', (req, res) => {

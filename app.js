@@ -48,11 +48,11 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
-app.use('/coffee', coffeeRouter)
+app.use('/coffee-list', coffeeRouter)
 
 app.listen(PORT, () =>
   console.log(
-    `✅ The server is running on port ${PORT}\n🌐 http://localhost:4000`
+    `✅ The server is running on: http://localhost:4000\n📄 Swagger Documentation: http://localhost:4000/api-docs`
   )
 )
 
