@@ -81,7 +81,7 @@ const router = express.Router()
 
 /**
  * @swagger
- * /coffee-list:
+ * /coffee:
  *   get:
  *     summary: Get Coffees Endpoint
  *     description: Returns a single coffee instance
@@ -118,15 +118,20 @@ const router = express.Router()
  *       parameters: []
  */
 
+// GET/coffee
 router.get('/', (req, res) => {
   coffeeController.getAll(req, res)
 })
 
+// POST/coffee
+router.post('/', (req, res) => {
+  coffeeController.create(req, res)
+})
+
+// GET/coffee/:id
 router.get('/:id', (req, res) => {
   coffeeController.getById(req, res)
 })
-
-// // router.post('/', (req, res) => {})
 
 // // get coffee by id
 // router.get('/:id', (req, res) => {

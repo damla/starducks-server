@@ -16,13 +16,25 @@ controller.getAll = async (req, res) => {
   }
 }
 
+controller.create = async (req, res) => {
+  const newCoffee = new Coffee(req.body)
+
+  try {
+    const coffee = await newCoffee.save()
+
+    if (!coffee) res.status(400).json('Invalid Input')
+    else res.status(201).json(coffee)
+  } catch (err) {
+    console.error('Error in getting coffee data - ' + err.message)
+    res.status(400).json({ error: 'Invalid Input' })
+  }
+}
+
 controller.getById = async (req, res) => {
   try {
-    // pull data from db
     let coffee = await Coffee.getById(req.params.id)
 
-    // send data pulled from db
-    if (!coffee) res.status(404).json('Coffee data does not exist.')
+    if (!coffee) res.status(404).json('Resource Not Found')
     else res.status(200).json(coffee)
   } catch (err) {
     console.error('Error in getting coffee data - ' + err.message)

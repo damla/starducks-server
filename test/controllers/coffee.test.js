@@ -5,9 +5,9 @@ import seedData from '../db/coffees.js'
 
 chai.use(chaiHttp)
 
-describe('/GET/coffee-list', async () => {
+describe('/GET/coffee', async () => {
   it('it should GET all of the coffees', async () => {
-    let res = await chai.request(app).get('/coffee-list')
+    let res = await chai.request(app).get('/coffee')
 
     chai.expect(res.status).to.equal(200)
     chai.expect(res.body).to.be.a('array')

@@ -52,7 +52,7 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs))
 app.use(express.json())
 app.use(morgan('dev'))
 
-app.use('/coffee-list', coffeeRouter)
+app.use('/coffee', coffeeRouter)
 
 app.listen(PORT, () =>
   console.log(
