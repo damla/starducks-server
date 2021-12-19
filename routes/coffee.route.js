@@ -153,6 +153,36 @@ router.post('/', (req, res) => {
   coffeeController.create(req, res)
 })
 
+/**
+ * @swagger
+ * /coffee:
+ * /coffee/{id}:
+ *   get:
+ *     summary: Get Coffee Endpoint
+ *     description: Returns a single coffee instance
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         style: matrix
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: A Coffee Response
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/CoffeeResponse'
+ *       '404':
+ *         description: Not Found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: string
+ *             example: Resource Not Found
+ */
+
 // GET/coffee/:id
 router.get('/:id', (req, res) => {
   coffeeController.getById(req, res)
