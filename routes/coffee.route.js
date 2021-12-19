@@ -133,17 +133,14 @@ router.get('/:id', (req, res) => {
   coffeeController.getById(req, res)
 })
 
-// // get coffee by id
-// router.get('/:id', (req, res) => {
-//   coffeeController.getByCoffeeId(req, res)
-// })
+// DELETE/coffee/:id
+router.delete('/:id', (req, res) => {
+  coffeeController.delete(req, res)
+})
 
-// router.post('/', (req, res) => {
-//   coffeeController.createCoffee(req, res)
-// })
-
-// router.get('/:id', (req, res) => {})
-// router.delete('/:id', (req, res) => {})
-// router.put('/:id', (req, res) => {})
+// PUT/coffee/:id
+router.put('/:id', (req, res) => {
+  coffeeController.update(req, res)
+})
 
 export default router
