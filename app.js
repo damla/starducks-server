@@ -17,39 +17,39 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json({ type: 'application/json' }))
 
-// const options = {
-//   definition: {
-//     openapi: '3.0.0',
-//     info: {
-//       contact: {
-//         email: 'orhanburak@kloia.com',
-//         name: 'Kloia'
-//       },
-//       description: 'Coffee endpoint API',
-//       title: 'Coffee API',
-//       version: '0.0.1'
-//     },
-//     servers: [
-//       {
-//         url: 'http://localhost:4000'
-//       }
-//       // {
-//       //   url: '{server}',
-//       //   variables: {
-//       //     server: {
-//       //       default: 'https://starducks-server.herokuapp.com/'
-//       //     }
-//       //   }
-//       // }
-//     ]
-//   },
-//   apis: ['./routes/*.route.js']
-// }
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      contact: {
+        email: 'orhanburak@kloia.com',
+        name: 'Kloia'
+      },
+      description: 'Coffee endpoint API',
+      title: 'Coffee API',
+      version: '0.0.1'
+    },
+    servers: [
+      // {
+      //   url: 'http://localhost:4000'
+      // }
+      {
+        url: '{server}',
+        variables: {
+          server: {
+            default: 'https://starducks-mongodb-server.herokuapp.com/'
+          }
+        }
+      }
+    ]
+  },
+  apis: ['./routes/*.route.js']
+}
 
-// const specs = swaggerJsDoc(options)
-// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs))
+const specs = swaggerJsDoc(options)
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs))
 
-// app.use(express.json())
+app.use(express.json())
 app.use(morgan('dev'))
 
 app.use('/coffee-list', coffeeRouter)

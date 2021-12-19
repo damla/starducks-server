@@ -3,7 +3,6 @@ import chaiHttp from 'chai-http'
 import app from '../../app.js'
 import seedData from '../db/coffees.js'
 
-// let should = chai.should()
 chai.use(chaiHttp)
 
 describe('/GET/coffee-list', () => {
