@@ -123,6 +123,31 @@ router.get('/', (req, res) => {
   coffeeController.getAll(req, res)
 })
 
+/**
+ * @swagger
+ * /coffee:
+ *    post:
+ *     summary: Create a Coffee
+ *     description: Create a single coffee
+ *     requestBody:
+ *       description: Coffee object to be created
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/CoffeeRequest'
+ *       required: true
+ *     responses:
+ *       '201':
+ *         description: A Coffee Response
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/CoffeeResponse'
+ *       '400':
+ *         description: Invalid Input
+ *     parameters: []
+ */
+
 // POST/coffee
 router.post('/', (req, res) => {
   coffeeController.create(req, res)
