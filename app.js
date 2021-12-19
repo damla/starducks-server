@@ -27,7 +27,7 @@ const options = {
         url: '{server}',
         variables: {
           server: {
-            default: 'https://starducks-server-stage.herokuapp.com/'
+            default: 'https://starducks-server.herokuapp.com/'
           }
         }
       }
@@ -50,7 +50,7 @@ app.use('/coffee-list', coffeeRouter)
 
 app.listen(PORT, () =>
   console.log(
-    `✅ The server is running on: http://localhost:4000\n📄 Swagger Documentation: https://starducks-server-stage.herokuapp.com/api-docs`
+    `✅ The server is running on: http://localhost:${PORT}\n📄 Swagger Documentation: http://localhost:${PORT}/api-docs`
   )
 )
 
