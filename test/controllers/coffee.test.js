@@ -1,8 +1,7 @@
 import chai, { assert } from 'chai'
 import chaiHttp from 'chai-http'
 import app from '../../app.js'
-import JSONdb from 'simple-json-db'
-const db = new JSONdb('./utils/db/db.json')
+import seedData from '../db/coffees.js'
 
 // let should = chai.should()
 chai.use(chaiHttp)
@@ -13,7 +12,7 @@ describe('/GET/coffee-list', () => {
 
     chai.expect(res.status).to.equal(200)
     chai.expect(res.body).to.be.a('array')
-    chai.expect(res.body.length).to.equal(db.get('coffees').length)
+    chai.expect(res.body.length).to.equal(seedData.length)
     chai.expect(
       res.body.every((i) =>
         chai
@@ -23,10 +22,9 @@ describe('/GET/coffee-list', () => {
             'description',
             'ingredients',
             'category',
-            'id'
+            '_id'
           )
       )
     )
-    assert.deepEqual(res.body, db.get('coffees'), 'Coffee list is correct.')
   })
 })
