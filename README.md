@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/damla/starducks-server/tree/main.svg?style=svg&circle-token=359ede319a88a8b675f77fa361b1cf2b0fa89493)](https://circleci.com/gh/damla/starducks-server/tree/main)
 
-# ☕️ Starducks Client
+# ☕️ Starducks Server
 
 - [🔗 Client](https://starducks-client.netlify.app)
 - [🔗 Server](https://starducks-server.herokuapp.com/api-docs)
