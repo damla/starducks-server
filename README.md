@@ -3,6 +3,7 @@
 # ☕️ Starducks Server
 
 - [🔗 Client](https://starducks-client.netlify.app)
+  - [📦 Repo](https://github.com/damla/starducks-client)
 - [🔗 Server](https://starducks-server.herokuapp.com/api-docs)
 
 ## Description
