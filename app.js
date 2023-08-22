@@ -22,8 +22,8 @@ const options = {
     openapi: '3.0.0',
     info: {
       contact: {
-        email: 'orhanburak@kloia.com',
-        name: 'Kloia'
+        email: 'me@damlakoksal.com',
+        name: 'Damla Koksal'
       },
       description: 'Coffee endpoint API',
       title: 'Coffee API',
